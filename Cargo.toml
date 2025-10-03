@@ -5,5 +5,5 @@ edition = "2024"
 description = "Normalize consumer DNA genotype exports into structured SNP data via provider-specific parsers."
 license = "MIT"
 readme = "README.md"
-keywords = ["dna", "genetics", "bioinformatics", "parser", "snp", "23andme", "ancestry", "genesforgood"]
+keywords = ["dna", "genetics", "snp", "23andme", "ancestry"]
 categories = ["science", "science::bioinformatics"]
