@@ -14,7 +14,13 @@ pub fn dna_parser<T: DnaParser>(dna: String, provider: T) -> Result<HashMap<Stri
             if line.starts_with("#") || line.starts_with("rsid") {
                 continue;
             }
-            let snp = provider_parser.parse(&line).unwrap();
+            let snp = match provider_parser.parse(&line) {
+                Ok(snp) => snp,
+                Err(e) => {
+                    println!("Error parsing line: {}: {}", line, e);
+                    continue;
+                }
+            };
             snp_map.insert(snp.rsid.clone(), snp);
         }
     } else {
